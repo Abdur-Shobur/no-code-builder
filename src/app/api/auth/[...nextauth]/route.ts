@@ -1,4 +1,4 @@
-import { UserType } from '@/store/features/user';
+// import { UserType } from '@/store/features/user';
 import NextAuth, { User as NextAuthUser } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -6,7 +6,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 interface CustomUser extends NextAuthUser {
 	accessToken?: string;
 	refreshToken?: string;
-	user: UserType;
+	user: any;
 }
 
 const handler = NextAuth({
@@ -59,7 +59,7 @@ const handler = NextAuth({
 			// Map token properties to session
 			session.accessToken = token.accessToken as string;
 			session.refreshToken = token.refreshToken as string;
-			session.user = token.user as UserType;
+			session.user = token.user as any;
 
 			return session;
 		},

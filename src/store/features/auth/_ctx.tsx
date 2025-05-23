@@ -127,7 +127,7 @@ export const AddParent = ({
 							loading={isLoading}
 							itemLayout="horizontal"
 							dataSource={parents?.data || []}
-							renderItem={(item) => (
+							renderItem={(item: IParent) => (
 								<List.Item
 									className={`cursor-pointer hover:bg-slate-200   !px-2 rounded-md !border ${
 										data?.some((i) => i._id === item._id) ? 'bg-gray-100' : ''
